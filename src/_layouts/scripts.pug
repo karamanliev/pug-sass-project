@@ -89,6 +89,15 @@ script(type='text/javascript').
   li.addClass("tq-current");
   });
 script(type='text/javascript').
+  if(window.location.href === "http://localhost:3000/") {
+    $('.tq-list-new li:first-child').addClass('tq-selected');
+  } 
+  else {
+    $(".tq-list-new li a").filter(function(){
+      return this.href == location.href.replace(/#.*/, "");
+    }).parent('li').addClass("tq-selected");
+  }
+script(type='text/javascript').
   $('.tq-tabs li').click( function() {
   $(this).addClass('tq-current').siblings().removeClass('tq-current');
   });
