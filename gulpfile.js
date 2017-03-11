@@ -20,7 +20,8 @@ var paths = {
   css: './public/css/',
   data: './src/_data/',
   imgSrc: './src/img/**',
-  imgDest: './public/img'
+  imgDest: './public/img',
+  fonts: './public/fonts'
 };
 
 /**
@@ -34,15 +35,23 @@ gulp.task('images', function() {
       .pipe(gulp.dest(paths.imgDest));
 });
 
+// fonts
+
+gulp.task('fonts', function () {
+  return gulp.src('src/fonts/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(gulp.dest(paths.fonts));
+});
+
+
 /**
  * Compile .pug files and pass in data from json file
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function () {
   return gulp.src('./src/*.pug')
-    .pipe(data(function (file) {
-      return require(paths.data + path.basename(file.path) + '.json');
-    }))
+    // .pipe(data(function (file) {
+    //   return require(paths.data + path.basename(file.path) + '.json');
+    // }))
     .pipe(pug())
     .on('error', function (err) {
       process.stderr.write(err.message + '\n');
@@ -61,7 +70,7 @@ gulp.task('rebuild', ['pug'], function () {
 /**
  * Wait for pug and sass tasks, then launch the browser-sync Server
  */
-gulp.task('browser-sync', ['sass', 'pug', 'images'], function () {
+gulp.task('browser-sync', ['sass', 'pug', 'images', 'fonts'], function () {
   browserSync({
     server: {
       baseDir: paths.public

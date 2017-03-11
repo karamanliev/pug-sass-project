@@ -1,0 +1,260 @@
+script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+script(type='text/javascript').
+  /*Sidebar interactions*/
+  $('.tq-sb-expander li').click( function() {
+  var item = $(this),
+  sidebar = item.parents('.tq-sidebar');
+  /*expand*/
+  if (sidebar.hasClass('tq-collapsed')) {
+  sidebar.removeClass('tq-collapsed');
+  if (content.hasClass('tq-large-right')) {
+  content.removeClass('tq-large-right').addClass('tq-small-right');
+  }
+  }
+  });
+  $('.tq-sb-hide').click( function() {
+  var item = $(this),
+  sidebar = item.parents('.tq-sidebar');
+  sidebar.addClass('tq-collapsed');
+  /*collapse*/
+  if (sidebar.hasClass('tq-left-sidebar')) {
+  if (content.hasClass('tq-large-left')) {
+  content.removeClass('tq-large-left').addClass('tq-small-left');
+  } else {
+  content.addClass('tq-small-left');
+  }
+  }
+  else if (sidebar.hasClass('tq-right-sidebar')) {
+  if (content.hasClass('tq-large-right')) {
+  content.removeClass('tq-large-right').addClass('tq-small-right');
+  } else {
+  content.addClass('tq-small-right');
+  }
+  }
+  });
+  var content = $('.tq-content');
+  $('.tq-sb-dock').click( function() {
+  var docker = $(this),
+  parent_sidebar = docker.parents('.tq-sidebar');
+  /*dock left sidebar*/
+  if (parent_sidebar.hasClass('tq-left-sidebar')) {
+  if (parent_sidebar.hasClass('tq-large')) {
+  if (content.hasClass('tq-large-left')) {
+  content.removeClass('tq-large-left').addClass('tq-small-left');
+  } else if (content.hasClass('tq-small-left')) {
+  content.removeClass('tq-small-left').addClass('tq-large-left')
+  }
+  } else {
+  content.toggleClass('tq-small-left');
+  }
+  }
+  /*dock right sidebar*/
+  if (parent_sidebar.hasClass('tq-right-sidebar')) {
+  if (parent_sidebar.hasClass('tq-large')) {
+  if (content.hasClass('tq-large-right')) {
+  content.removeClass('tq-large-right').addClass('tq-small-right');
+  } else if (content.hasClass('tq-small-right')) {
+  content.removeClass('tq-small-right').addClass('tq-large-right')
+  }
+  } else {
+  content.toggleClass('tq-small-right');
+  }
+  }
+  });
+  /* Expand/collapse responsive sidebars*/
+  $('.tq-responsive-sidebars').click( function() {
+  $('.tq-sidebars-wrapper').toggleClass('tq-active');
+  });
+  /*Switch between left and right sidebar in mobile resolution - To be refactored */
+  $('.tq-sidebar-switch > ul > li').click( function() {
+  var tab_side = $(this).data('sidebar'),
+  sidebar_container = $(this).parents('.tq-sidebars-wrapper');
+  if (tab_side=="left") {
+  sidebar_container.removeClass('tq-show-right').addClass('tq-show-left');
+  } else {
+  sidebar_container.removeClass('tq-show-left').addClass('tq-show-right');
+  }
+  });
+script(type='text/javascript').
+  $('.tq-tree li > span').click(function() {
+  var $this = $(this),
+  li = $this.parent();
+  if (li.hasClass('tq-parent')) {
+  li.toggleClass('tq-expanded');
+  if (!(li.hasClass('tq-expanded')) && li.parent('.tq-tree > ul').length) {
+  li.find('.tq-parent').removeClass('tq-expanded');
+  }
+  }
+  $('.tq-tree li').removeClass("tq-current")
+  li.addClass("tq-current");
+  });
+script(type='text/javascript').
+  $('.tq-tabs li').click( function() {
+  $(this).addClass('tq-current').siblings().removeClass('tq-current');
+  });
+script(type='text/javascript').
+  $( document ).ready(function() {
+  //position active switch on load
+  $('.tq-radio-group-switch').each( function() {
+  var parent = $(this),
+  checked_switch = parent.find(".tq-label-input-container.tq-checked-switch"),
+  active_marker = parent.find(".tq-active");
+  if(checked_switch.length){
+  active_marker.css({
+  "width": checked_switch.width() + "px",
+  "left": checked_switch[0].offsetLeft + "px"
+  });
+  }
+  });
+  // position active switch on click
+  $(".tq-radio-group-switch:not(.tq-switcher) .tq-label-input-container").on('click', function(){
+  var $this = $(this),
+  parent_group = $this.parents('.tq-radio-group-switch');
+  parent_group.find(".tq-label-input-container").removeClass("tq-checked-switch");
+  $this.addClass("tq-checked-switch");
+  var new_position = parent_group.find('.tq-checked-switch')[0].offsetLeft,
+  new_width = parent_group.find('.tq-checked-switch').width();
+  if(parent_group.find(".tq-label-input-container").hasClass("tq-checked-switch")){
+  parent_group.find(".tq-active").css("left", new_position);
+  parent_group.find(".tq-active").css("width", new_width);
+  }
+  });
+  // position active switch on click
+  $(".tq-switcher input").on('click', function(){
+  var $this = $(this),
+  switcher = $this.parents('.tq-switcher');
+  if (switcher.hasClass('tq-on')) {
+  switcher.removeClass('tq-on').addClass('tq-off');
+  switcher.find('input[value=on]').parents('.tq-label-input-container').removeClass('tq-checked-switch');
+  switcher.find('input[value=off]').parents('.tq-label-input-container').addClass('tq-checked-switch');
+  } else if (switcher.hasClass('tq-off')) {
+  switcher.removeClass('tq-off').addClass('tq-on');
+  switcher.find('input[value=off]').parents('.tq-label-input-container').removeClass('tq-checked-switch');
+  switcher.find('input[value=on]').parents('.tq-label-input-container').addClass('tq-checked-switch');
+  }
+  var new_position = switcher.find('.tq-checked-switch')[0].offsetLeft,
+  new_width = switcher.find('.tq-checked-switch').width();
+  if(switcher.find(".tq-label-input-container").hasClass("tq-checked-switch")){
+  switcher.find(".tq-active").css("left", new_position);
+  switcher.find(".tq-active").css("width", new_width);
+  }
+  });
+  });
+script(type='text/javascript').
+  var $table = $('.tq-table'),
+  $thead = $table.find('.tq-thead table'),
+  $tbody = $table.find('.tq-tbody table'),
+  $cols = $table.find('.tq-tbody th'),
+  $th = $table.find('.tq-thead th'),
+  colWidth,
+  tbodyWidth;
+  // Adjust the width of thead cells when window resizes
+  $(window).resize(function() {
+  colWidth = $cols.map(function() {
+  return $(this).width();
+  }).get();
+  tbodyWidth = $tbody.width();
+  if ($tbody.width() != $thead.width()) {
+  $thead.width(tbodyWidth);
+  }
+  $table.find('.tq-thead tr').children().each(function(i, v) {
+  $(v).width(colWidth[i]);
+  });
+  }).resize();
+script(type='text/javascript').
+  var sortable = $('.tq-sort.tq-alpha, .tq-sort.tq-numeric');
+  sortable.click( function() {
+  var $this = $(this);
+  if (!($this.hasClass('tq-asc')) && !($this.hasClass('tq-desc'))) {
+  $this.addClass('tq-asc');
+  } else if ($this.hasClass('tq-asc')) {
+  $this.removeClass('tq-asc').addClass('tq-desc');
+  } else if ($this.hasClass('tq-desc')) {
+  $this.removeClass('tq-desc');
+  }
+  });
+script(type='text/javascript').
+  /*header*/
+  $('#tq-app-header-switcher .tq-radio-group-switch input').click( function() {
+  var color_value = $(this).val(),
+  header = $('.tq-app-header') ;
+  header.removeClass('tq-dark tq-light tq-default').addClass(color_value);
+  });
+  /*right sidebar*/
+  $('#tq-right-sidebar-switcher .tq-radio-group-switch:not(.tq-switcher) input').click( function() {
+  var right_sb = $('aside.tq-right-sidebar'),
+  color_value = $(this).val();
+  right_sb.removeClass('tq-dark tq-light tq-default').addClass(color_value);
+  });
+  $('#tq-right-sidebar-switcher .tq-switcher input').click( function() {
+  var right_sb = $('aside.tq-right-sidebar'),
+  switcher = $(this).parents('.tq-switcher');
+  if (!(switcher.hasClass("tq-on"))) {
+  right_sb.addClass('tq-opaque');
+  } else {
+  right_sb.removeClass('tq-opaque');
+  }
+  });
+  /*left sidebar*/
+  $('#tq-left-sidebar-switcher .tq-radio-group-switch:not(.tq-switcher) input').click( function() {
+  var left_sb = $('aside.tq-left-sidebar')
+  var color_value = $(this).val();
+  left_sb.removeClass('tq-dark tq-light tq-default').addClass(color_value);
+  });
+  $('#tq-left-sidebar-switcher .tq-switcher input').click( function() {
+  var left_sb = $('aside.tq-left-sidebar'),
+  switcher = $(this).parents('.tq-switcher');
+  if (!(switcher.hasClass("tq-on"))) {
+  left_sb.addClass('tq-opaque');
+  } else {
+  left_sb.removeClass('tq-opaque');
+  }
+  });
+  /*Range slider interaction*/
+  $(".tq-point").on("click",function(){
+  var $this = $(this),
+  data_position = $this.data('position'),
+  range_slider_container = $this.parents(".tq-range-slider-container"),
+  input = range_slider_container.find('.tq-point-input[data-position=' + data_position +']');
+  range_slider_container.find('.tq-active').removeClass("tq-active");
+  input.focus();
+  $this.addClass('tq-active');
+  });
+script(type='text/javascript').
+  /*search expand*/
+  $('.tq-search-container .tq-search-expand').on('click', function(){
+  var search_container = $(this).parents('.tq-search-container'),
+  drop_down = search_container.find('.tq-drop-down-container');
+  search_container.removeClass('tq-collapsed');
+  if (search_container.hasClass('tq-collapsed')) {
+  if (drop_down.hasClass('tq-active')) {
+  drop_down.removeClass('tq-active');
+  }
+  }
+  });
+  // search collapse - only for Demo. In real case should collapse on blur
+  $('.tq-search-container .tq-search-collapse').on('click', function(){
+  var search_container = $(this).parents('.tq-search-container');
+  if (!(search_container.hasClass('tq-collapsed'))) {
+  search_container.addClass('tq-collapsed');
+  }
+  });
+script.
+  /* Chart */
+  $(document).ready(function () {
+  var data = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  series: [
+  [12, 9, 7, 8, 5],
+  [2, 1, 3.5, 7, 3],
+  [1, 3, 4, 5, 6]
+  ]
+  };
+  var pieData = {
+  labels: data.labels,
+  series: data.series[0]
+  }
+  new Chartist.Bar('.barChart', data);
+  new Chartist.Line('.lineChart', data);
+  new Chartist.Pie('.pieChart', pieData);
+  });

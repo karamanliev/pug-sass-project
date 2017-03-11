@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  //- HEAD INCLUDE
+  include _layouts/head
+    body
+      .tq-content.tq-left-sidebar
+        section.tq-main-area
+          //- ACCORDION INCLUDE
+          include _components/accordion
+        .tq-sidebars-wrapper
+          .tq-tabs-container
+            .tq-tabs.tq-sidebar-switch
+              ul
+                li(data-sidebar='left')
+                  .tq-item
+                    span.text-node Left Sidebar
+                li(data-sidebar='right')
+                  .tq-item
+                    span.text-node Right Sidebar
+            .tq-tab-content.tq-responsive-tab-content
+              //- SIDEBAR INCLUDE
+              include _layouts/sidebar
+      //- SCRIPTS INCLUDE
+      include _layouts/scripts
