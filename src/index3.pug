@@ -1,0 +1,47 @@
+extends _layouts/home
+
+mixin blabla(sub, textr, chekidjos)
+	.avatar
+	h3.subtitle= sub
+	p.subtitle-text= textr
+	a.button.button-primary(href="#")= chekidjos
+
+block head_end
+	link(rel="stylesheet" href="/css/main.css")
+
+block content
+	.laino
+	section
+		.container
+			.row
+
+				.one-half.column.left
+					+blabla('Smahtiq', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Duham for free')
+
+				.one-half.column.right
+					+blabla('Buhcha duska', 'Petar plet plete prez tri pleta preplita pleti petre pleti 4e da ne ti eba maikata', 'Ebi sa v guza')
+
+			.row
+
+				.one-third.column
+					pre
+						code
+							| .some class {
+							| 	background: red;
+							| }
+
+				.one-third.column
+					pre
+						code
+							| .some class {
+							| 	background: red;
+							| }
+				.one-third.column
+					pre
+						code
+							| .some class {
+							| 	background: red;
+							| }
+
+block body_end
+	script(type="text/javascript" src="/js/script.js")

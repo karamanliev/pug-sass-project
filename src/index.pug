@@ -1,47 +1,219 @@
-extends _layouts/home
-
-mixin blabla(sub, textr, chekidjos)
-	.avatar
-	h3.subtitle= sub
-	p.subtitle-text= textr
-	a.button.button-primary(href="#")= chekidjos
-
-block head_end
-	link(rel="stylesheet" href="/css/main.css")
-
-block content
-	.laino
-	section
-		.container
-			.row
-
-				.one-half.column.left
-					+blabla('Smahtiq', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Duham for free')
-
-				.one-half.column.right
-					+blabla('Buhcha duska', 'Petar plet plete prez tri pleta preplita pleti petre pleti 4e da ne ti eba maikata', 'Ebi sa v guza')
-
-			.row
-
-				.one-third.column
-					pre
-						code
-							| .some class {
-							| 	background: red;
-							| }
-
-				.one-third.column
-					pre
-						code
-							| .some class {
-							| 	background: red;
-							| }
-				.one-third.column
-					pre
-						code
-							| .some class {
-							| 	background: red;
-							| }
-
-block body_end
-	script(type="text/javascript" src="/js/script.js")
+doctype html
+html(lang='en')
+  include _layouts/head
+  body
+      .tq-content.tq-with-header.tq-with-primary-subheader.tq-left-sidebar
+          header.tq-app-header.tq-dark
+              .tq-header-child
+                  span.tq-logo
+              .tq-header-child.tq-hide-in-480
+                  h1.tq-panel-title Welcome to the UI Components Design Project
+              .tq-header-child.tq-hide-in-1024
+                  ul.tq-menu.tq-borders.tq-right
+                      li
+                          span.tq-item
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-envelope
+                      li
+                          span.tq-item
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-calendar
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-sign-out-right
+                                  .tq-tooltip Exit
+              .tq-header-child.tq-right.tq-show-in-768
+                  ul.tq-menu.tq-borders
+                      li.tq-responsive-sidebars
+                          .tq-item
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-menu-bar
+              .tq-header-child.tq-right.tq-hide-in-480
+                  ul.tq-menu.tq-borders
+                      li
+                          .tq-item
+                              .tq-search-container.tq-collapsed.tq-with-submit-btn.tq-with-check-filters
+                                  .tq-checkbox-group-container.tq-no-label
+                                      .tq-checkbox-group-switch
+                                          .tq-label-input-container
+                                              label(for='item1ID')
+                                                  i.tq-icon-folder-open.tq-inline.tq-padding
+                                              |
+                                              input#item1ID(type='checkbox')
+                                          .tq-label-input-container
+                                              label(for='item2ID')
+                                                  i.tq-icon-document-blank.tq-inline.tq-padding
+                                              |
+                                              input#item2ID(type='checkbox')
+                                  |
+                                  input.tq-input(type='text', value='', placeholder='Search...')
+                                  span.tq-search-expand
+                                  |
+                                  button.tq-search-collapse.tq-btn.tq-no-background
+                                      i.tq-icon-close
+              .tq-header-child.tq-right
+                  ul.tq-menu.tq-borders
+                      li.tq-hide-in-480
+                          span.tq-item
+                              span.tq-text-node Friday, 29.01.2016
+                      li
+                          span.tq-item
+                              i.tq-icon-user
+                              |
+                              span.tq-text-node.tq-hide-in-768 Pierre Gold
+          .tq-sub-header.tq-primary.tq-sub-menus-responsive.tq-with-search
+              .tq-subheader-child.tq-offset-left.tq-hide-in-1024
+                  .tq-breadcrumb-container
+                      ul.tq-breadcrumb-content
+                          li
+                              span.tq-text-node Home
+                          li
+                              span.tq-text-node Health
+                          li
+                              span.tq-text-node Person Area: Mr. Pierre Gold
+                          li.tq-current
+                              span.tq-text-node Edit Address
+              .tq-header-child.tq-right
+                  ul.tq-menu.tq-borders
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-star
+                                  .tq-tooltip Eco
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-clock
+                                  .tq-tooltip Gift
+              .tq-subheader-child.tq-show-in-1024
+                  ul.tq-menu.tq-borders
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-ambulance
+                                  .tq-tooltip Claims
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-gear
+                                  .tq-tooltip Settings
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-copy-solid
+                                  .tq-tooltip Clipboard
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-alert
+                                  .tq-tooltip Warnings
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-list
+                                  .tq-tooltip View all
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-edit
+                                  .tq-tooltip Edit mode
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-folder-open
+                                  .tq-tooltip Folders
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-compare
+                                  .tq-tooltip Compare versions
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-calendar-2
+                                  .tq-tooltip Schedule
+              .tq-subheader-child.tq-right
+                  ul.tq-menu.tq-borders
+                      li
+                          span.tq-item.tq-tooltip-container
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding
+                                  i.tq-icon-print
+                                  .tq-tooltip Print
+                      li
+                          span.tq-item
+                              span.tq-btn.tq-icon.tq-no-background.tq-no-padding.tq-tooltip-container
+                                  i.tq-icon-pdf
+                                  .tq-tooltip Export
+              .tq-subheader-child.tq-show-in-480
+                  .tq-search-container.tq-collapsed.tq-with-filters.tq-with-submit-btn
+                      .tq-select-container.tq-no-label.tq-filters
+                          .tq-drop-down-container
+                              .tq-drop-down-selected
+                                  span.tq-selected-item
+                                      i.tq-icon-filter
+                                      |
+                                      span.tq-number 3
+                              .tq-drop-down-options.tq-top-right-pos
+                                  .tq-checkbox-group-container
+                                      .tq-checkbox-group
+                                          .tq-label-input-container.tq-label-padding
+                                              label.tq-label(for='checkId04')
+                                                  span.tq-text-node Automobile
+                                              |
+                                              input#checkId04.tq-checkbox(type='checkbox', name='testCheckboxGroup1', value='', placeholder='', disabled='', checked='')
+                                              i.tq-select-icon.tq-icon-car-frontal
+                                          .tq-label-input-container.tq-label-padding
+                                              label.tq-label(for='checkId01')
+                                                  span.tq-text-node Ambulance
+                                              |
+                                              input#checkId01.tq-checkbox(type='checkbox', name='testCheckboxGroup', value='')
+                                              i.tq-select-icon.tq-icon-ambulance
+                                          .tq-label-input-container.tq-label-padding.tq-current
+                                              label.tq-label(for='checkId02')
+                                                  span.tq-text-node Van
+                                              |
+                                              input#checkId02.tq-checkbox(type='checkbox', name='testCheckboxGroup', value='', checked='')
+                                              i.tq-select-icon.tq-icon-van
+                                          .tq-label-input-container.tq-label-padding
+                                              label.tq-label(for='checkId041')
+                                                  span.tq-text-node Bus
+                                              |
+                                              input#checkId041.tq-checkbox(type='checkbox', name='testCheckboxGroup1', value='', placeholder='', checked='')
+                                              i.tq-select-icon.tq-icon-bus-frontal-solid
+                                          .tq-label-input-container.tq-label-padding.tq-current
+                                              label.tq-label(for='checkId03')
+                                                  span.tq-text-node Plane
+                                              |
+                                              input#checkId03.tq-checkbox(type='checkbox', name='testCheckboxGroup1', value='', disabled='')
+                                              i.tq-select-icon.tq-icon-plane
+                                          .tq-label-input-container.tq-label-padding.tq-current
+                                              label.tq-label(for='checkId04')
+                                                  span.tq-text-node Truck
+                                              |
+                                              input#checkId04.tq-checkbox(type='checkbox', name='testCheckboxGroup1', value='', placeholder='', disabled='', checked='')
+                                              i.tq-select-icon.tq-icon-van-frontal-solid
+                      |
+                      input.tq-input(type='text', value='', placeholder='Search...')
+                      span.tq-search-expand
+                      |
+                      button.tq-search-collapse.tq-btn.tq-no-background
+                          i.tq-icon-close
+          section.tq-main-area
+              //- INDEX HTML INCLUDE
+              include _layouts/index_comp
+          .tq-sidebars-wrapper
+              .tq-tabs-container
+                  .tq-tabs.tq-sidebar-switch
+                      ul
+                          li(data-sidebar='left')
+                              .tq-item
+                                  span.text-node Left Sidebar
+                          li(data-sidebar='right')
+                              .tq-item
+                                  span.text-node Right Sidebar
+                  .tq-tab-content.tq-responsive-tab-content
+                      //- SIDEBAR INCLUDE
+                      include _layouts/sidebar
+          //- SCRIPTS INCLUDE
+      include _layouts/scripts

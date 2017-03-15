@@ -1,0 +1,501 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Web UI: Accordion
+    link(href='../base.css', rel='stylesheet', type='text/css')
+    link(href='../global-theme/base-theme.css', rel='stylesheet', type='text/css')
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    .tq-content.tq-left-sidebar
+      section.tq-main-area
+        .tq-grid.tq-gutter-all
+            .tq-row
+                .tq-l-col-24-24.tq-gutter
+                    .tq-panel
+                        .tq-grid.tq-gutter-all
+                            .tq-row
+                                .tq-l-col-24-24
+                                    h1.tq-panel-title.tq-text-center
+                                        | UI element:
+                                        span.tq-green Action Menu
+            .tq-row
+                .tq-l-col-24-24.tq-gutter
+                    .tq-panel
+                        .tq-grid.tq-gutter-all
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list with class .tq-menu
+                                    ul.tq-menu
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Contact
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list with classes .tq-menu.borders.selectable
+                                    ul.tq-menu.tq-borders.tq-selectable
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li.tq-current
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Contact
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list with icons before text
+                                    ul.tq-menu.tq-borders
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                                span.tq-text-node Testimonials
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list with icons after text
+                                    ul.tq-menu.tq-borders
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                                i.tq-icon-map
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list of icons and class .tq-menu.selectable
+                                    ul.tq-menu.tq-selectable
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom Unordered list with icons and classes .tq-menu.borders.selectable
+                                    ul.tq-menu.tq-borders.tq-selectable
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor
+            .tq-row
+                .tq-l-col-24-24.tq-gutter
+                    .tq-panel
+                        .tq-grid.tq-gutter-all
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom(style='margin-bottom: 10px;') Use with additional class .tq-menu-bg-light
+                                    ul.tq-menu.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-tooltip-container
+                                                    button.tq-btn.tq-icon.tq-no-background
+                                                        i.tq-icon-download
+                                                        .tq-tooltip Download
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-selectable.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li.tq-current
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Contact
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                button.tq-btn.tq-no-background.tq-no-padding
+                                                    i.tq-icon-arrow-left-2
+                                                    |
+                                                    span.tq-text-node Back
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                                i.tq-icon-map
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-selectable.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-selectable.tq-menu-bg-light
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor
+            .tq-row
+                .tq-l-col-24-24.tq-gutter
+                    .tq-panel.tq-accent
+                        .tq-grid.tq-gutter-all
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    h2.tq-panel-title.tq-gutter-bottom(style='margin-bottom: 10px; color: #fff;') Use with additional class .tq-menu-bg-dark
+                                    ul.tq-menu.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-tooltip-container
+                                                    button.tq-btn.tq-icon.tq-no-background
+                                                        i.tq-icon-download
+                                                        .tq-tooltip Download
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-selectable.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                        li.tq-current
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Products
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Contact
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                                span.tq-text-node Home
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                                span.tq-text-node About
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                                span.tq-text-node Case Study
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                                span.tq-text-node Demos
+                                        li
+                                            .tq-item
+                                                button.tq-btn.tq-no-background.tq-no-padding
+                                                    i.tq-icon-arrow-left-2
+                                                    |
+                                                    span.tq-text-node Back
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Home
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                span.tq-text-node About
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Case Study
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Demos
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                span.tq-text-node Testimonials
+                                                i.tq-icon-map
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-selectable.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor
+                            .tq-row
+                                .tq-l-col-12-24.tq-m-col-12-12.tq-gutter-all
+                                    ul.tq-menu.tq-borders.tq-selectable.tq-menu-bg-dark
+                                        li
+                                            .tq-item
+                                                i.tq-icon-credit-card-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map-marker
+                                        li
+                                            .tq-item
+                                                i.tq-icon-table
+                                        li
+                                            .tq-item
+                                                i.tq-icon-tag
+                                        li
+                                            .tq-item
+                                                i.tq-icon-map
+                                        li
+                                            .tq-item
+                                                i.tq-icon-checklist-2
+                                        li
+                                            .tq-item
+                                                i.tq-icon-monitor                
+      .tq-sidebars-wrapper
+        .tq-tabs-container
+          .tq-tabs.tq-sidebar-switch
+            ul
+              li(data-sidebar='left')
+                .tq-item
+                  span.text-node Left Sidebar
+              li(data-sidebar='right')
+                .tq-item
+                  span.text-node Right Sidebar
+          .tq-tab-content.tq-responsive-tab-content
+            include ../_layouts/sidebar
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(type='text/javascript').
+      $('.tq-heavy-splitter, .tq-light-splitter').on('click', function(){
+      if ($(this).closest('.tq-single-expand')) {
+      $('.tq-single-expand').find('.tq-section-container').removeClass('tq-expanded');
+      };
+      $(this).closest('.tq-section-container').toggleClass('tq-expanded');
+      });
